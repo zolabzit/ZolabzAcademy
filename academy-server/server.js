@@ -31,16 +31,6 @@ db.connect((err) => {
 });
 
 app.post("/api/freereg", async (req, res) => {
- //  // console.log(req,"ddd");
- //  try {
- //   const parsedBody = req.body;
- //   //  console.log(req, "ddd");
- //   console.log("parsed value json formatttttttttt", parsedBody);
- //  } catch (err) {
- //   // The req.body object is not valid JSON data
- //   console.log("error in return typeeeeeeeeee", err);
- //  }
-
  const { name, email, phone } = req.body;
  if (!name && !email && !phone) {
   return res.status(400).json({ error: "All properties are required." });
