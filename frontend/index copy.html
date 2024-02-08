@@ -49,27 +49,48 @@
                         <li class="nav-item">
                             <a class="nav-link click-scroll" href="#section_5">Contact</a>
                         </li>
-                        <button type="button" class="btn custom-button custom-border-btn1" onclick="window.location.href='internship-form.html'">
+
+                        <!-- <button type="button" class="btn custom-button custom-border-btn1" data-toggle="modal" data-target="#enrollmentModal">
+                            Internship Enrollment
+                        </button> -->
+
+                        <button type="button" class="btn custom-button custom-border-btn1" onclick="openInternshipForm()">
                             Internship Enrollment
                         </button>
-                        
                     </ul>
 
 
                 </div>
             </div>
-        </nav>        
+        </nav>
+        
 
         <section class="hero-section d-flex justify-content-center align-items-center" id="section_1">
             <div class="container">
                 <div class="row">
+
                     <div class="col-lg-8 col-12 mx-auto">
                         <h1 class="text-white text-center">Discover and Learn</h1>
+
                         <h6 class="text-center">platform for successful career</h6>
+
+                        <!-- <form class="custom-form mt-4 pt-2 mb-lg-0 mb-5" role="search">
+                            <div class="input-group input-group-lg">
+                                <span class="input-group-text bi-search" id="basic-addon1">
+                                    
+                                </span>
+
+                                <input name="keyword" type="search" class="form-control" id="keyword" placeholder="Design, Code, Marketing, Finance ..." aria-label="Search">
+
+                                <button type="submit" class="form-control">Search</button>
+                            </div>
+                        </form> -->
                     </div>
+
                 </div>
             </div>
         </section>
+
 
         <section class="featured-section">
             <div class="container">
@@ -106,11 +127,13 @@
                         </div>
                     </div>
                     
+                    
                 </div>
             </div>
         </section>
 
- <section class="explore-section section-padding" id="section_2">
+
+        <section class="explore-section section-padding" id="section_2">
             <div class="container">
 
                     <div class="col-12 text-center">
@@ -289,7 +312,8 @@
                 </div>
             </div>
         </section>
-        
+
+
         <section class="timeline-section section-padding" id="section_3">
             <div class="section-overlay"></div>
 
@@ -304,6 +328,10 @@
                     </div>
 
                     <div class="col-12 text-center mt-5">
+                        <!-- <p class="text-white">
+                            Want to learn more?
+                            <a href="#" class="btn custom-btn custom-border-btn ms-3">Check out Youtube</a>
+                        </p> -->
                         <div class="row">
                             <div class="col-md-4 mb-4">
                                 <div class="card custom-block bg-white shadow-lg">
@@ -551,6 +579,68 @@
               </div>
         </section>
 
+<section class="internship">
+    <div class="container">
+        <h2 class="mb-4 text-center">Internship Application Form</h2>
+        <form id="internshipApplicationForm">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" class="form-control" id="fullName" name="fullName" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" class="form-control" id="phone" name="phone" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="gender">Gender</label>
+                    <select class="form-control" id="gender" name="gender" required>
+                        <option value="" disabled selected>Select Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="university">University/College</label>
+                    <input type="text" class="form-control" id="university" name="university" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="studyArea">Major/Area of Study</label>
+                    <input type="text" class="form-control" id="studyArea" name="studyArea" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="completionYear">Year of Completion</label>
+                    <input type="number" class="form-control" id="completionYear" name="completionYear" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="resume">Upload Resume/CV</label>
+                    <input type="file" class="form-control-file" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="coverLetter">Cover Letter</label>
+                <input type="file" class="form-control-file" id="coverLetter" name="coverLetter" accept=".pdf,.doc,.docx" required>
+            </div>
+            <!-- <button type="submit" class="btn btn-primary">Submit Application</button> -->
+            <input type="hidden" id="resumeBlob" name="resumeBlob">
+            <input type="hidden" id="coverLetterBlob" name="coverLetterBlob">
+            <button type="submit" class="btn btn-primary">Submit Application</button>
+       
+        </form>
+    </div>
+</section>
+
         <section class="contact-section section-padding section-bg" id="section_5">
             <div class="container">
                 <div class="row">
@@ -686,7 +776,7 @@
     </footer>
 
     <!-- To handle form -->
-    <script>
+    <!-- <script>
         document.getElementById('s').addEventListener('submit', (e) => {
             e.preventDefault();
             const form = e.target;
@@ -707,9 +797,9 @@
                 console.error(error);
             });
         });
-    </script>
-      <!-- using Fetch method  -->
-    <!-- <script>
+    </script> -->
+<!--       using Fetch method 
+    <script>
 const form = document.getElementById('submissions-form');
 
 form.addEventListener('submit', async (event) => {
@@ -764,7 +854,36 @@ for (const [key, value] of data.entries()) {
     });
 </script>
 
+<!-- Internship -->
+<script>
+    const internshipForm = document.getElementById('internshipApplicationForm');
+    const submitButton = document.getElementById('submit-btn-internship');
+    const successMessage = document.getElementById('success-message-internship');
 
+    submitButton.addEventListener('click', async event => {
+        event.preventDefault();
+
+        const formData = new FormData(internshipForm);
+        var value = Object.fromEntries(formData);
+
+        try {
+            const response = await axios.post('http://localhost:3000/api/internship', value); 
+            const resData = response.data;
+            // console.log(resData);
+            console.log(response);
+            successMessage.textContent = resData.message;
+            internshipForm.reset();
+        } catch (error) {
+            console.error(error.message);
+        }
+    });
+</script>
+
+<script>
+    function openInternshipForm() {
+        window.open('internship-form.html', '_blank');
+    }
+</script>
 
     <!-- JAVASCRIPT FILES -->
     <script src="js/jquery.min.js"></script>

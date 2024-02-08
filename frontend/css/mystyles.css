@@ -1117,6 +1117,10 @@ blockquote {
  color: var(--white-color);
 }
 
+.internship {
+ padding: 50px;
+}
+
 /* media queries */
 @media screen and (max-width: 991px) {
  h1 {
